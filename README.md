@@ -2,4 +2,4 @@ This repo contains notes from the technical books I read. It's mostly the key pa
 
 | Name | Author | Started | Finished |
 |-|-|-|-|
-| [A Philosopy of Software Design](/books/a-philosophy-of-software-design.md) | John Ousterhout | May 15, 2026 | ?
+| [A Philosopy of Software Design](/notes/a-philosophy-of-software-design.md) | John Ousterhout | May 15, 2026 | ?
