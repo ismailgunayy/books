@@ -65,6 +65,22 @@ This concept is directly related to the term **abstraction**, meaning "a simplif
 
 ### Chapter 5 - Information Hiding (and Leakage)
 
+The chapter discusses the information hiding technique for creating deep modules.
+
+**What is information hiding?**
+Information hiding can be described as encapsulating any piece of knowledge in a module. It's one of the best ways of reducing complexity, in 2 ways:
+- It simplifies the interface of a module, by hiding the exposed design decisions or implementation details that don't bring any value to the user. Hence, lower _cognitive load_ for the user of the module.
+- Hiding a piece of information means there are no _dependencies_ on that information, which makes our module easier to maintain. If we want to make a change in the implementation, which we'll most likely do, the user doesn't have to know about this change. Hence, less _change amplification_.
+
+**Anti-Patterns**
+- Information Leakage: The opposite of information hiding. It occurs when design decisions are exposed through the interface of a module, or they are reflected in multiple modules, transitively. It creates a _dependency_ between modules which results in bigger _change amplification_ and higher _cognitive load_.
+- Temporal Decomposition: Structure of the system reflecting the order in which operations occur instead of focusing on what common knowledge the modules have. Also results in information leakage. If you have multiple modules sharing the same piece of knowledge in the different parts of the execution order, they might be better merged to create a deeper module.
+
+When should we expose the knowledge?
+- If a piece of knowledge is really required for the user of the module, for the system to function properly, then we must not hide the information.
+
+**Key Takeaway:** We should hide as much information as possible to create deeper modules to prevent/reduce complexity.
+
 ---
 
 ### Chapter 6 - General-Purpose Modules are Deeper
