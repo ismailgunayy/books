@@ -68,6 +68,7 @@ This concept is directly related to the term **abstraction**, meaning "a simplif
 The chapter discusses the information hiding technique for creating deep modules.
 
 **What is information hiding?**
+
 Information hiding can be described as encapsulating any piece of knowledge in a module. It's one of the best ways of reducing complexity, in 2 ways:
 - It simplifies the interface of a module, by hiding the exposed design decisions or implementation details that don't bring any value to the user. Hence, lower _cognitive load_ for the user of the module.
 - Hiding a piece of information means there are no _dependencies_ on that information, which makes our module easier to maintain. If we want to make a change in the implementation, which we'll most likely do, the user doesn't have to know about this change. Hence, less _change amplification_.
@@ -84,6 +85,25 @@ When should we expose the knowledge?
 ---
 
 ### Chapter 6 - General-Purpose Modules are Deeper
+
+The chapter discusses the benefits of generality such as the code being simpler, cleaner and easier to understand and problems of specialization.
+
+- Generality helps with addressing a broad range of problems, not only today's needs but also possible future needs. It matches the _Strategic Programming_ mindset, which recommends that we continually invest in good design. However, when it's too general, it can even fail to solve the particular problem you have today.
+- Specialization helps with addressing your current problem, and the code can always be refactored when additional uses are discovered. It's consistent with the common incremental approach in software development. On the other hand, when it's too specialized, it may require too much effort to make changes when it needs to be updated for additional needs.
+
+**Make modules somewhat general-purpose**
+
+The sweet spot is to implement modules somewhat general-purpose, which can be decided by looking at the simplicity of the interface and the functionality of the module. The module's functionality must be special enough to address your needs, but its interface should not reflect those needs while being simple enough to use for today's needs.
+
+**Questions to ask yourself**
+- What is the simplest interface that will cover all my current needs?
+  - If you manage to reduce the number of methods in the interface without trimming the functionality, and without introducing many more arguments which in fact are not helping with the simplicity, then you're probably creating more general-purpose methods.
+- In how many situations will this method be used?
+  - If a method exists for one particular case, that is a red flag. Either it should be merged into another general-purpose method, if possible, or several special-purpose methods should be replaced with fewer general-purpose methods.
+- Is this API easy to use for my current needs?
+  - If you end up writing a lot of additional code to utilize a class for your current needs, then you've probably made the module too general-purpose.
+ 
+**Key Takeaway:** It's never possible to fully eliminate special cases and make everything general-purpose as much as possible. The goal should be having a *somewhat* general-purpose module that's still covering the current needs without any additional complexity.
 
 ---
 
