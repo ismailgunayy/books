@@ -112,11 +112,29 @@ The sweet spot is to implement modules somewhat general-purpose, which can be de
 - Is this API easy to use for my current needs?
   - If you end up writing a lot of additional code to utilize a class for your current needs, then you've probably made the module too general-purpose.
 
-**Key Takeaway:** It's never possible to fully eliminate special cases and make everything general-purpose as much as possible. The goal should be having a _somewhat_ general-purpose module that's still covering the current needs without any additional complexity.
+**Key Takeaway:** It's never possible to fully eliminate special cases and make everything general-purpose. The goal should be having a _somewhat_ general-purpose module that's still covering the current needs without any additional complexity.
 
 ---
 
 ### Chapter 7 - Different Layer, Different Abstraction
+
+The chapter discusses how adjacent layers of a system should have different levels of abstraction, situations that violate this principle, what kind of problems these situations would result in and how to refactor them.
+
+- **Pass-Through Methods**: It's a method that contains little to no functionality except invoking another method. It's one of those huge red flags that show the division of responsibility is not clear between the modules of the system. Possible solutions:
+  - Exposing the lower-level class directly to the callers of the higher-level class, eliminating the middleman.
+  - Redistributing the functionality between classes.
+  - Merging the classes if the responsibility cannot be divided in a clean way.
+
+- **Interface Duplication**: There might be some cases in which having methods with the same signature isn't necessarily bad. One example is a _dispatcher_. Its goal is to invoke another method based on the provided arguments, and it usually has the exact same signature as the method it invokes.
+
+- **Decorators (Wrappers)**: Decorators essentially take another module and extend its functionality. They mostly provide an API identical or very similar to the underlying module, and their methods invoke the methods of the underlying module. The goal is to have a special-purpose module; therefore, they often tend to be shallow modules and have pass-through methods. Questions to ask before creating a new decorator:
+  - Would it make sense to merge the new functionality into the underlying module?
+  - Would it make sense to merge the new functionality into an existing decorator?
+  - Is it really necessary to wrap the underlying module, or could you implement the new functionality as a separate module?
+
+- **Pass-Through Variables**: It's yet another form of duplication across layers: a variable passed down through a long chain of methods. In most cases, the best solution is to have a context object that all of the methods can access. Nevertheless, it's not an ideal solution because it can get messy in time, and could create thread-safety issues unless the variables are immutable.
+
+**Key Takeaway**: We solve every problem through abstractions. However, if different levels of the system have the same level of abstraction, it adds unnecessary complexity.
 
 ---
 
