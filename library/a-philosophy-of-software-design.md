@@ -81,8 +81,8 @@ Information hiding can be described as encapsulating any piece of knowledge in a
 
 **Anti-Patterns**
 
-- Information Leakage: The opposite of information hiding. It occurs when design decisions are exposed through the interface of a module, or they are reflected in multiple modules, transitively. It creates a _dependency_ between modules which results in bigger _change amplification_ and higher _cognitive load_.
-- Temporal Decomposition: Structure of the system reflecting the order in which operations occur instead of focusing on what common knowledge the modules have. Also results in information leakage. If you have multiple modules sharing the same piece of knowledge in the different parts of the execution order, they might be better merged to create a deeper module.
+- **Information Leakage**: The opposite of information hiding. It occurs when design decisions are exposed through the interface of a module, or they are reflected in multiple modules, transitively. It creates a _dependency_ between modules which results in bigger _change amplification_ and higher _cognitive load_.
+- **Temporal Decomposition**: Structure of the system reflecting the order in which operations occur instead of focusing on what common knowledge the modules have. Also results in information leakage. If you have multiple modules sharing the same piece of knowledge in the different parts of the execution order, they might be better merged to create a deeper module.
 
 When should we expose the knowledge?
 
@@ -96,8 +96,8 @@ When should we expose the knowledge?
 
 The chapter discusses the benefits of generality such as the code being simpler, cleaner and easier to understand and problems of specialization.
 
-- Generality helps with addressing a broad range of problems, not only today's needs but also possible future needs. It matches the _Strategic Programming_ mindset, which recommends that we continually invest in good design. However, when it's too general, it can even fail to solve the particular problem you have today.
-- Specialization helps with addressing your current problem, and the code can always be refactored when additional uses are discovered. It's consistent with the common incremental approach in software development. On the other hand, when it's too specialized, it may require too much effort to make changes when it needs to be updated for additional needs.
+- **Generality** helps with addressing a broad range of problems, not only today's needs but also possible future needs. It matches the _Strategic Programming_ mindset, which recommends that we continually invest in good design. However, when it's too general, it can even fail to solve the particular problem you have today.
+- **Specialization** helps with addressing your current problem, and the code can always be refactored when additional uses are discovered. It's consistent with the common incremental approach in software development. On the other hand, when it's too specialized, it may require too much effort to make changes when it needs to be updated for additional needs.
 
 **Make modules somewhat general-purpose**
 
@@ -139,5 +139,11 @@ The chapter discusses how adjacent layers of a system should have different leve
 ---
 
 ### Chapter 8 - Pull Complexity Downwards
+
+The chapter discusses a perspective on where to handle complexity, and its relation to deeper modules. The main question it asks is, in the case of an unavoidable complexity in a piece of functionality, whether the developers of the module that contains that functionality should handle that complexity or the users of the module.
+
+Complexity should be pulled downwards, meaning we should handle that complexity at the lowest possible level. Since a module usually has many more users than its developers, the developers should endure more pain to handle the complexity within the module, so the users won't have to deal with it.
+
+**Key Takeaway**: Ideally, we should solve a problem (or a subproblem) completely in a module without scattering the parts of the solution between the module and its users. That said, we should always question whether doing so reduces overall system complexity, which is the ultimate goal.
 
 ---
