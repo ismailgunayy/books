@@ -1,16 +1,45 @@
-## A Philosophy Of Software Design by John Ousterhout
+# A Philosophy Of Software Design by John Ousterhout
+
+> In Progress
+
+<!-- toc -->
+
+- [1. Introduction](#1-introduction)
+- [2. The Nature of Complexity](#2-the-nature-of-complexity)
+- [3. Working Code Isn't Enough](#3-working-code-isnt-enough)
+- [4. Modules Should Be Deep](#4-modules-should-be-deep)
+- [5. Information Hiding (and Leakage)](#5-information-hiding-and-leakage)
+- [6. General-Purpose Modules are Deeper](#6-general-purpose-modules-are-deeper)
+- [7. Different Layer, Different Abstraction](#7-different-layer-different-abstraction)
+- [8. Pull Complexity Downwards](#8-pull-complexity-downwards)
+<!-- - [9. Better Together or Better Apart?](#9-better-together-or-better-apart)
+- [10. Define Errors Out of Existence](#10-define-errors-out-of-existence)
+- [11. Design It Twice](#11-design-it-twice)
+- [12. Why Write Comments? The Four Excuses](#12-why-write-comments-the-four-excuses)
+- [13. Comments Should Describe Things that Aren't Obvious from the Code](#13-comments-should-describe-things-that-arent-obvious-from-the-code)
+- [14. Choosing Names](#14-choosing-names)
+- [15. Write the Comments First](#15-write-the-comments-first)
+- [16. Modifying Existing Code](#16-modifying-existing-code)
+- [17. Consistency](#17-consistency)
+- [18. Code Should Be Obvious](#18-code-should-be-obvious)
+- [19. Software Trends](#19-software-trends)
+- [20. Designing for Performance](#20-designing-for-performance)
+- [21. Decide What Matters](#21-decide-what-matters)
+- [22. Conclusion](#22-conclusion) -->
+
+<!-- tocstop -->
 
 ---
 
-### Chapter 1 - Introduction
+#### 1. Introduction
 
-Introductory chapter for the book.
+Introductory for the book.
 
 ---
 
-### Chapter 2 - The Nature of Complexity
+#### 2. The Nature of Complexity
 
-The chapter defines what complexity is, what the main causes and the symptoms are.
+The defines what complexity is, what the main causes and the symptoms are.
 
 What complexity is:
 
@@ -43,9 +72,9 @@ Symptoms of complexity:
 
 ---
 
-### Chapter 3 - Working Code Isn't Enough
+#### 3. Working Code Isn't Enough
 
-The chapter discusses why the strategic approach is better than the tactical approach in the long run.
+The discusses why the strategic approach is better than the tactical approach in the long run.
 
 - **Strategic Programming**: This approach requires the developer to invest some time in system design, think about the bigger picture, introduce a minimal amount of complexity, or ideally reduce it, when changing a piece of code regardless of its size. It usually results in tasks taking 10-20% longer, but pays off very well in the long run. Simply put, "Working code isn't enough".
 - **Tactical Programming**: This is considered a short-term solution. It only makes changes that take the least amount of time and usually the easiest to implement. It creates more problems in the long run. _Technical debt_ is often caused by this approach.
@@ -54,9 +83,9 @@ The chapter discusses why the strategic approach is better than the tactical app
 
 ---
 
-### Chapter 4 - Modules Should Be Deep
+#### 4. Modules Should Be Deep
 
-The chapter stresses the importance of modular design and how/why to apply it.
+The stresses the importance of modular design and how/why to apply it.
 
 **Modular Design**: The approach of separating the software into reasonably sized modules so that developers only need to face a small fraction of the overall complexity when making a change, which helps with cognitive load.
 
@@ -68,9 +97,9 @@ This concept is directly related to the term **abstraction**, meaning "a simplif
 
 ---
 
-### Chapter 5 - Information Hiding (and Leakage)
+#### 5. Information Hiding (and Leakage)
 
-The chapter discusses the information hiding technique for creating deep modules.
+The discusses the information hiding technique for creating deep modules.
 
 **What is information hiding?**
 
@@ -92,9 +121,9 @@ When should we expose the knowledge?
 
 ---
 
-### Chapter 6 - General-Purpose Modules are Deeper
+#### 6. General-Purpose Modules are Deeper
 
-The chapter discusses the benefits of generality such as the code being simpler, cleaner and easier to understand and problems of specialization.
+The discusses the benefits of generality such as the code being simpler, cleaner and easier to understand and problems of specialization.
 
 - **Generality** helps with addressing a broad range of problems, not only today's needs but also possible future needs. It matches the _Strategic Programming_ mindset, which recommends that we continually invest in good design. However, when it's too general, it can even fail to solve the particular problem you have today.
 - **Specialization** helps with addressing your current problem, and the code can always be refactored when additional uses are discovered. It's consistent with the common incremental approach in software development. On the other hand, when it's too specialized, it may require too much effort to make changes when it needs to be updated for additional needs.
@@ -116,9 +145,9 @@ The sweet spot is to implement modules somewhat general-purpose, which can be de
 
 ---
 
-### Chapter 7 - Different Layer, Different Abstraction
+#### 7. Different Layer, Different Abstraction
 
-The chapter discusses how adjacent layers of a system should have different levels of abstraction, situations that violate this principle, what kind of problems these situations would result in and how to refactor them.
+The discusses how adjacent layers of a system should have different levels of abstraction, situations that violate this principle, what kind of problems these situations would result in and how to refactor them.
 
 - **Pass-Through Methods**: It's a method that contains little to no functionality except invoking another method. It's one of those huge red flags that show the division of responsibility is not clear between the modules of the system. Possible solutions:
   - Exposing the lower-level class directly to the callers of the higher-level class, eliminating the middleman.
@@ -138,12 +167,97 @@ The chapter discusses how adjacent layers of a system should have different leve
 
 ---
 
-### Chapter 8 - Pull Complexity Downwards
+#### 8. Pull Complexity Downwards
 
-The chapter discusses a perspective on where to handle complexity, and its relation to deeper modules. The main question it asks is, in the case of an unavoidable complexity in a piece of functionality, whether the developers of the module that contains that functionality should handle that complexity or the users of the module.
+The discusses a perspective on where to handle complexity, and its relation to deeper modules. The main question it asks is, in the case of an unavoidable complexity in a piece of functionality, whether the developers of the module that contains that functionality should handle that complexity or the users of the module.
 
 Complexity should be pulled downwards, meaning we should handle that complexity at the lowest possible level. Since a module usually has many more users than its developers, the developers should endure more pain to handle the complexity within the module, so the users won't have to deal with it.
 
 **Key Takeaway**: Ideally, we should solve a problem (or a subproblem) completely in a module without scattering the parts of the solution between the module and its users. That said, we should always question whether doing so reduces overall system complexity, which is the ultimate goal.
 
 ---
+
+<!--
+#### 9. Better Together or Better Apart?
+
+
+
+---
+
+#### 10. Define Errors Out of Existence
+
+
+
+---
+
+#### 11. Design It Twice
+
+
+
+---
+
+#### 12. Why Write Comments? The Four Excuses
+
+
+
+---
+
+
+
+#### 13. Comments Should Describe Things that Aren't Obvious from the Code
+
+---
+
+#### 14. Choosing Names
+
+
+
+---
+
+#### 15. Write the Comments First
+
+
+
+---
+
+#### 16. Modifying Existing Code
+
+
+
+---
+
+#### 17. Consistency
+
+
+
+---
+
+#### 18. Code Should Be Obvious
+
+
+
+---
+
+#### 19. Software Trends
+
+
+
+---
+
+#### 20. Designing for Performance
+
+
+
+---
+
+#### 21. Decide What Matters
+
+
+
+---
+
+#### 22. Conclusion
+
+
+
+--- -->
