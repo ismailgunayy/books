@@ -4,6 +4,8 @@
 
 <!-- toc -->
 
+### Table of Contents
+
 - [1. Introduction](#1-introduction)
 - [2. The Nature of Complexity](#2-the-nature-of-complexity)
 - [3. Working Code Isn't Enough](#3-working-code-isnt-enough)
@@ -39,13 +41,13 @@ Introductory for the book.
 
 #### 2. The Nature of Complexity
 
-The defines what complexity is, what the main causes and the symptoms are.
+The chapter defines what complexity is, what the main causes and the symptoms are.
 
 What complexity is:
 
 > Complexity is what a developer experiences at a particular point in time when trying to achieve a particular goal.
 
-A formula for the overall system complexity: $$C = \sum_{p} C_p t_p$$
+A formula for the overall system complexity: $$C = \sum_{p} c_p t_p$$
 
 Which means:
 
@@ -74,7 +76,7 @@ Symptoms of complexity:
 
 #### 3. Working Code Isn't Enough
 
-The discusses why the strategic approach is better than the tactical approach in the long run.
+The chapter discusses why the strategic approach is better than the tactical approach in the long run.
 
 - **Strategic Programming**: This approach requires the developer to invest some time in system design, think about the bigger picture, introduce a minimal amount of complexity, or ideally reduce it, when changing a piece of code regardless of its size. It usually results in tasks taking 10-20% longer, but pays off very well in the long run. Simply put, "Working code isn't enough".
 - **Tactical Programming**: This is considered a short-term solution. It only makes changes that take the least amount of time and usually the easiest to implement. It creates more problems in the long run. _Technical debt_ is often caused by this approach.
@@ -85,7 +87,7 @@ The discusses why the strategic approach is better than the tactical approach in
 
 #### 4. Modules Should Be Deep
 
-The stresses the importance of modular design and how/why to apply it.
+The chapter stresses the importance of modular design and how/why to apply it.
 
 **Modular Design**: The approach of separating the software into reasonably sized modules so that developers only need to face a small fraction of the overall complexity when making a change, which helps with cognitive load.
 
@@ -99,7 +101,7 @@ This concept is directly related to the term **abstraction**, meaning "a simplif
 
 #### 5. Information Hiding (and Leakage)
 
-The discusses the information hiding technique for creating deep modules.
+The chapter discusses the information hiding technique for creating deep modules.
 
 **What is information hiding?**
 
@@ -123,7 +125,7 @@ When should we expose the knowledge?
 
 #### 6. General-Purpose Modules are Deeper
 
-The discusses the benefits of generality such as the code being simpler, cleaner and easier to understand and problems of specialization.
+The chapter discusses the benefits of generality such as the code being simpler, cleaner and easier to understand and problems of specialization.
 
 - **Generality** helps with addressing a broad range of problems, not only today's needs but also possible future needs. It matches the _Strategic Programming_ mindset, which recommends that we continually invest in good design. However, when it's too general, it can even fail to solve the particular problem you have today.
 - **Specialization** helps with addressing your current problem, and the code can always be refactored when additional uses are discovered. It's consistent with the common incremental approach in software development. On the other hand, when it's too specialized, it may require too much effort to make changes when it needs to be updated for additional needs.
@@ -147,7 +149,7 @@ The sweet spot is to implement modules somewhat general-purpose, which can be de
 
 #### 7. Different Layer, Different Abstraction
 
-The discusses how adjacent layers of a system should have different levels of abstraction, situations that violate this principle, what kind of problems these situations would result in and how to refactor them.
+The chapter discusses how adjacent layers of a system should have different levels of abstraction, situations that violate this principle, what kind of problems these situations would result in and how to refactor them.
 
 - **Pass-Through Methods**: It's a method that contains little to no functionality except invoking another method. It's one of those huge red flags that show the division of responsibility is not clear between the modules of the system. Possible solutions:
   - Exposing the lower-level class directly to the callers of the higher-level class, eliminating the middleman.
@@ -169,7 +171,7 @@ The discusses how adjacent layers of a system should have different levels of ab
 
 #### 8. Pull Complexity Downwards
 
-The discusses a perspective on where to handle complexity, and its relation to deeper modules. The main question it asks is, in the case of an unavoidable complexity in a piece of functionality, whether the developers of the module that contains that functionality should handle that complexity or the users of the module.
+The chapter discusses a perspective on where to handle complexity, and its relation to deeper modules. The main question it asks is, in the case of an unavoidable complexity in a piece of functionality, whether the developers of the module that contains that functionality should handle that complexity or the users of the module.
 
 Complexity should be pulled downwards, meaning we should handle that complexity at the lowest possible level. Since a module usually has many more users than its developers, the developers should endure more pain to handle the complexity within the module, so the users won't have to deal with it.
 

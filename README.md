@@ -4,5 +4,5 @@ This repo contains notes from the technical books I read. It's mostly the key pa
 
 | Name                                                                               | Author          | Started      | Finished |
 | ---------------------------------------------------------------------------------- | --------------- | ------------ | -------- |
-| [A Philosopy of Software Design](/library/a-philosophy-of-software-design.md)      | John Ousterhout | May 15, 2026 | -        |
+| [A Philosophy of Software Design](/library/a-philosophy-of-software-design.md)     | John Ousterhout | May 15, 2026 | -        |
 | [Understanding Distributed Systems](/library/understanding-distributed-systems.md) | Roberto Vitillo | Oct 26, 2026 | -        |
