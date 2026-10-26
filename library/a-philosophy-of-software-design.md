@@ -6,28 +6,29 @@
 
 ### Table of Contents
 
-- [1. Introduction](#1-introduction)
-- [2. The Nature of Complexity](#2-the-nature-of-complexity)
-- [3. Working Code Isn't Enough](#3-working-code-isnt-enough)
-- [4. Modules Should Be Deep](#4-modules-should-be-deep)
-- [5. Information Hiding (and Leakage)](#5-information-hiding-and-leakage)
-- [6. General-Purpose Modules are Deeper](#6-general-purpose-modules-are-deeper)
-- [7. Different Layer, Different Abstraction](#7-different-layer-different-abstraction)
-- [8. Pull Complexity Downwards](#8-pull-complexity-downwards)
-<!-- - [9. Better Together or Better Apart?](#9-better-together-or-better-apart)
-- [10. Define Errors Out of Existence](#10-define-errors-out-of-existence)
-- [11. Design It Twice](#11-design-it-twice)
-- [12. Why Write Comments? The Four Excuses](#12-why-write-comments-the-four-excuses)
-- [13. Comments Should Describe Things that Aren't Obvious from the Code](#13-comments-should-describe-things-that-arent-obvious-from-the-code)
-- [14. Choosing Names](#14-choosing-names)
-- [15. Write the Comments First](#15-write-the-comments-first)
-- [16. Modifying Existing Code](#16-modifying-existing-code)
-- [17. Consistency](#17-consistency)
-- [18. Code Should Be Obvious](#18-code-should-be-obvious)
-- [19. Software Trends](#19-software-trends)
-- [20. Designing for Performance](#20-designing-for-performance)
-- [21. Decide What Matters](#21-decide-what-matters)
-- [22. Conclusion](#22-conclusion) -->
+1. [Introduction](#1-introduction)
+2. [The Nature of Complexity](#2-the-nature-of-complexity)
+3. [Working Code Isn't Enough](#3-working-code-isnt-enough)
+4. [Modules Should Be Deep](#4-modules-should-be-deep)
+5. [Information Hiding (and Leakage)](#5-information-hiding-and-leakage)
+6. [General-Purpose Modules are Deeper](#6-general-purpose-modules-are-deeper)
+7. [Different Layer, Different Abstraction](#7-different-layer-different-abstraction)
+8. [Pull Complexity Downwards](#8-pull-complexity-downwards)
+<!--
+9. [Better Together or Better Apart?](#9-better-together-or-better-apart)
+10. [Define Errors Out of Existence](#10-define-errors-out-of-existence)
+11. [Design It Twice](#11-design-it-twice)
+12. [Why Write Comments? The Four Excuses](#12-why-write-comments-the-four-excuses)
+13. [Comments Should Describe Things that Aren't Obvious from the Code](#13-comments-should-describe-things-that-arent-obvious-from-the-code)
+14. [Choosing Names](#14-choosing-names)
+15. [Write the Comments First](#15-write-the-comments-first)
+16. [Modifying Existing Code](#16-modifying-existing-code)
+17. [Consistency](#17-consistency)
+18. [Code Should Be Obvious](#18-code-should-be-obvious)
+19. [Software Trends](#19-software-trends)
+20. [Designing for Performance](#20-designing-for-performance)
+21. [Decide What Matters](#21-decide-what-matters)
+22. [Conclusion](#22-conclusion) -->
 
 <!-- tocstop -->
 
