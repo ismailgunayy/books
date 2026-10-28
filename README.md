@@ -1,6 +1,6 @@
 # Books
 
-This repo contains notes from the technical books I read. It's mostly the key parts that clicked with me while reading, but it might also include subjective thoughts.
+This repo contains my personal notes and takes from the technical books I read. It's mostly the key parts that clicked with me while reading, but it might also include subjective thoughts. So they shouldn't be taken as direct references to the books.
 
 | Name                                                                               | Author          | Started      | Finished |
 | ---------------------------------------------------------------------------------- | --------------- | ------------ | -------- |
